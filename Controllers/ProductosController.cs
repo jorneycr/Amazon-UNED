@@ -50,4 +50,70 @@ public class ProductosController : Controller
         return View(producto);
     }
 
+    public ActionResult ListarProductos()
+    {
+        var productos = _context.Productos.ToList();
+        return View(productos); // Devuelve la vista ListarProductos.cshtml
+    }
+
+    public IActionResult Crear()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Crear(Producto producto)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Productos.Add(producto);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        return View(producto);
+    }
+
+    public IActionResult Editar(int id)
+    {
+        var producto = _context.Productos.FirstOrDefault(p => p.Id == id);
+        if (producto == null)
+        {
+            return NotFound();
+        }
+        return View(producto);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Editar(int id, Producto producto)
+    {
+        if (id != producto.Id)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            _context.Update(producto);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        return View(producto);
+    }
+
+    public IActionResult Eliminar(int id)
+    {
+        var producto = _context.Productos.FirstOrDefault(p => p.Id == id);
+        if (producto == null)
+        {
+            return NotFound();
+        }
+
+        _context.Productos.Remove(producto);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
+
 }

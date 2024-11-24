@@ -1,0 +1,43 @@
+@model List<Producto>
+
+@{
+    ViewBag.Title = "Gestión de Productos";
+}
+
+<h1>Gestión de Productos</h1>
+
+<a href="@Url.Action("Crear", "Productos")">Agregar Nuevo Producto</a>
+
+@if (!Model.Any())
+{
+    <p>No hay productos disponibles.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.Nombre</td>
+                    <td>@producto.Descripcion</td>
+                    <td>@producto.Precio.ToString("C")</td>
+                    <td>@producto.Stock</td>
+                    <td>
+                        <a href="@Url.Action("Editar", "Productos", new { id = producto.Id })">Editar</a> |
+                        <a href="@Url.Action("Eliminar", "Productos", new { id = producto.Id })" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,31 @@
+@model Producto
+
+@{
+    ViewBag.Title = "Crear Producto";
+}
+
+<h1>Crear Producto</h1>
+
+<form method="post">
+    <div>
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" value="@Model.Nombre" required />
+    </div>
+    <div>
+        <label for="Descripcion">Descripción</label>
+        <input type="text" id="Descripcion" name="Descripcion" value="@Model.Descripcion" required />
+    </div>
+    <div>
+        <label for="Precio">Precio</label>
+        <input type="number" step="0.01" id="Precio" name="Precio" value="@Model.Precio" required />
+    </div>
+    <div>
+        <label for="Stock">Stock</label>
+        <input type="number" id="Stock" name="Stock" value="@Model.Stock" required />
+    </div>
+    <div>
+        <label for="Categoria">Categoría</label>
+        <input type="text" id="Categoria" name="Categoria" value="@Model.Categoria" required />
+    </div>
+    <button type="submit">Guardar</button>
+</form>

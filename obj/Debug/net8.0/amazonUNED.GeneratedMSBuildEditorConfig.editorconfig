@@ -46,12 +46,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xIaXN0b3JpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Detalles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFsbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/ListarProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXExpc3RhclByb2R1Y3Rvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Shared/Error.cshtml]
