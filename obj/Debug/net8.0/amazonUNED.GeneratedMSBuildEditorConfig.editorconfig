@@ -30,16 +30,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pago/ProcesarPago.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xQcm9jZXNhclBhZ28uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pago/_ConfirmacionPagoModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xfQ29uZmlybWFjaW9uUGFnb01vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pedidos/Confirmar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xDb25maXJtYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pedidos/Exito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xFeGl0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pedidos/Historial.cshtml]
