@@ -1,0 +1,20 @@
+@model Producto
+
+@{
+    ViewBag.Title = "Detalles del Producto";
+}
+
+<h1>@Model.Nombre</h1>
+
+<section>
+    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+    <p><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+    <p><strong>Categoría:</strong> @Model.Categoria</p>
+    <p><strong>Stock disponible:</strong> @Model.Stock</p>
+
+    <form action="@Url.Action("Agregar", "Carrito", new { productoId = Model.Id })" method="post">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="@Model.Stock" value="1" required>
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+</section>

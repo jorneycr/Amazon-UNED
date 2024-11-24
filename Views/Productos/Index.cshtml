@@ -1,0 +1,30 @@
+@model IEnumerable<Producto>
+
+@{
+    ViewBag.Title = "Lista de Productos";
+}
+
+<h1>Productos</h1>
+
+<section>
+    @if (!Model.Any())
+    {
+        <p>No hay productos disponibles en esta categoría.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var producto in Model)
+            {
+                <li>
+                    <h3>@producto.Nombre</h3>
+                    <p>@producto.Descripcion</p>
+                    <p><strong>Precio:</strong> @producto.Precio.ToString("C")</p>
+                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">
+                        Ver detalles
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+</section>

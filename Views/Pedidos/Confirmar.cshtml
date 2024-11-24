@@ -1,0 +1,22 @@
+@model Pedido
+
+@{
+    ViewBag.Title = "Confirmación de Pedido";
+}
+
+<h1>Pedido Confirmado</h1>
+
+<section>
+    <p>Gracias por tu compra, @Model.Usuario.Nombre.</p>
+    <p><strong>Número de Pedido:</strong> @Model.Id</p>
+    <p><strong>Fecha:</strong> @Model.Fecha.ToString("g")</p>
+    <p><strong>Estado:</strong> @Model.Estado</p>
+    <h2>Productos:</h2>
+    <ul>
+        @foreach (var detalle in Model.Detalles)
+        {
+            <li>@detalle.Producto.Nombre - Cantidad: @detalle.Cantidad - Precio: @detalle.Precio.ToString("C")</li>
+        }
+    </ul>
+    <h2>Total: @Model.PrecioTotal.ToString("C")</h2>
+</section>

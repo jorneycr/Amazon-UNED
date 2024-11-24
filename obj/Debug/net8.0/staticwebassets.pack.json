@@ -1,0 +1,273 @@
+{
+  "Files": [
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\amazonUNED.bundle.scp.css",
+      "PackagePath": "staticwebassets\\amazonUNED.bundle.scp.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\js\\validation.js",
+      "PackagePath": "staticwebassets\\js\\validation.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "R:\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\S12\\AmazonUNED\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.amazonUNED.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.amazonUNED.props",
+      "PackagePath": "build\\amazonUNED.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.amazonUNED.props",
+      "PackagePath": "buildMultiTargeting\\amazonUNED.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.amazonUNED.props",
+      "PackagePath": "buildTransitive\\amazonUNED.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

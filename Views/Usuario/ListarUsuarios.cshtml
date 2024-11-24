@@ -1,0 +1,135 @@
+@model List<UsuarioConRolesViewModel>
+
+<div class="gestion-usuarios-container">
+    <h2 class="gestion-usuarios-title">Gestión de Usuarios</h2>
+
+    <table class="gestion-usuarios-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.Nombre</td>
+                    <td>@usuario.Apellido</td>
+                    <td>@usuario.Email</td>
+                    <td>@string.Join(", ", usuario.Roles)</td>
+                    <td>
+                        <a asp-action="EditarUsuario" asp-route-id="@usuario.Id" class="gestion-usuarios-action-link">Editar</a>
+                        <form asp-action="InactivarUsuario" asp-route-id="@usuario.Id" method="post" class="gestion-usuarios-action-form" onsubmit="return confirm('¿Estás seguro de que quieres inactivar este usuario?');">
+                            <button type="submit" class="gestion-usuarios-action-button">Inactivar</button>
+                        </form>
+                        <form asp-action="ActivarUsuario" asp-route-id="@usuario.Id" method="post" class="gestion-usuarios-action-form" onsubmit="return confirm('¿Estás seguro de que quieres activar este usuario?');">
+                            <button type="submit" class="gestion-usuarios-action-button-activar">Activar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    /*Listar Usuarios*/
+.gestion-usuarios-container {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.gestion-usuarios-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gestion-usuarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.gestion-usuarios-table thead th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.gestion-usuarios-table tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.gestion-usuarios-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.gestion-usuarios-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.gestion-usuarios-action-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.gestion-usuarios-action-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.gestion-usuarios-action-form {
+    display: inline;
+}
+.gestion-usuarios-action-button-activar {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgb(16, 168, 16);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gestion-usuarios-action-button-activar:hover {
+    background-color: rgb(104, 143, 42);
+}
+
+.gestion-usuarios-action-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gestion-usuarios-action-button:hover {
+    background-color: #e41026;
+}
+
+.gestion-usuarios-action-button:focus {
+    outline: none;
+}
+
+.gestion-usuarios-action-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+</style>

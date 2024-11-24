@@ -1,0 +1,29 @@
+@model IEnumerable<Pedido>
+
+@{
+    ViewBag.Title = "Historial de Pedidos";
+}
+
+<h1>Historial de Pedidos</h1>
+
+<section>
+    @if (!Model.Any())
+    {
+        <p>No tienes pedidos realizados.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var pedido in Model)
+            {
+                <li>
+                    <h3>Pedido #@pedido.Id</h3>
+                    <p>Fecha: @pedido.Fecha.ToString("g")</p>
+                    <p>Estado: @pedido.Estado</p>
+                    <p>Total: @pedido.PrecioTotal.ToString("C")</p>
+                    <a href="@Url.Action("Detalles", "Pedidos", new { id = pedido.Id })">Ver detalles</a>
+                </li>
+            }
+        </ul>
+    }
+</section>

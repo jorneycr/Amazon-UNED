@@ -1,0 +1,553 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+ /*Busqueda*/
+
+ /* #searchForm {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#searchForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#searchForm input[type="text"],
+#searchForm input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchForm button:hover {
+    background-color: #45a049;
+}
+
+.promotions {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+    color: #00796b;
+} */
+
+/*usuario*/
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.text-danger {
+    font-size: 14px;
+    color: #e74c3c;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.registro-container {
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registro-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.perfil {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.perfil h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.perfil p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.perfil p strong {
+    color: #333;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #0056b3;
+}
+
+.cambiar-contrasena {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.cambiar-contrasena h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cambiar-contrasena .mensaje {
+    font-size: 16px;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.text-danger {
+    font-size: 14px;
+    color: red;
+}
+
+.btn-primario {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.btn-primario:hover {
+    background-color: #0056b3;
+}
+
+/* .historial-reservas {
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.historial-reservas h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.no-reservas {
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.tabla-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-reservas th, .tabla-reservas td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.tabla-reservas th {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+}
+
+.tabla-reservas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla-reservas tr:hover {
+    background-color: #f1f1f1;
+} */
+
+.btn-cancelar {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cancelar:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.btn-cancelar:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+
+/*Politicas*/
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*payment*/
+
+/* Estilos para Procesar Pago */
+
+#paymentForm {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#paymentForm label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+#paymentForm input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#paymentForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#paymentForm button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.paymentUl  {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.paymentLi {
+    font-size: 16px;
+    color: #00796b;
+    padding: 5px 0;
+}
+
+/*resultados*/
+
+/* Estilo para el título */
+.resultados-titulo {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para la tabla */
+.resultados-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+.resultados-encabezado {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.resultados-celda {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alterna color de fondo en filas */
+.resultados-fila:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Resalta la fila al pasar el cursor */
+.resultados-fila:hover {
+    background-color: #e9ecef;
+}
+
+/* Estilo para el enlace de acción */
+.resultados-enlace {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resultados-enlace:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el mensaje de "No se encontraron rutas" */
+.resultados-mensaje {
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* Estilo para el título de detalles */
+.detalles-titulo {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Mensajes de éxito y error */
+.mensaje-exito {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo de la información de la ruta */
+.ruta-detalles {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.ruta-info {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Título para la sección de asientos */
+.asientos-titulo {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo para el formulario de selección de asientos */
+.form-seleccion-asientos {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lista-asientos {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+    gap: 10px;
+}
+
+.asiento-item {
+    margin: 5px 1%;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.asiento-label {
+    font-size: 14px;
+    color: #333;
+}
+
+.estado-asiento {
+    font-weight: bold;
+    margin-left: 5px;
+    color: #666;
+}
+
+/* Estilo del botón de reservar */
+.btn-reservar {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.btn-reservar:hover {
+    background-color: #0056b3;
+}
+

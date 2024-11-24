@@ -1,0 +1,46 @@
+@model IEnumerable<DetallePedido>
+
+@{
+    ViewBag.Title = "Carrito de Compras";
+}
+
+<h1>Tu Carrito</h1>
+
+<section>
+    @if (!Model.Any())
+    {
+        <p>Tu carrito está vacío.</p>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Producto.Nombre</td>
+                        <td>@item.Cantidad</td>
+                        <td>@item.Precio.ToString("C")</td>
+                        <td>@(item.Cantidad * item.Precio).ToString("C")</td>
+                        <td>
+                            <form action="@Url.Action("Eliminar", "Carrito", new { id = item.Id })" method="post">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h2>Total: @Model.Sum(i => i.Cantidad * i.Precio).ToString("C")</h2>
+        <a href="@Url.Action("Confirmar", "Pedidos")">Proceder al Pago</a>
+    }
+</section>

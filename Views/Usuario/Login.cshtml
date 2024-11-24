@@ -1,0 +1,40 @@
+@{
+    ViewBag.Title = "Login";
+}
+
+@model LoginViewModel
+
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    
+    <!-- Mostrar mensajes de error generales -->
+    @if (ViewData.ModelState.ErrorCount > 0)
+    {
+        <div class="alert alert-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+
+    <form asp-action="Login" method="post">
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Iniciar Sesión</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

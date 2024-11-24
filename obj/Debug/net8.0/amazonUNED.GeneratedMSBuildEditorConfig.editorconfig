@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = amazonUNED
+build_property.RootNamespace = amazonUNED
+build_property.ProjectDir = R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED
+build_property._RazorSourceGeneratorDebug = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Carrito/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pago/ProcesarPago.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xQcm9jZXNhclBhZ28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pago/_ConfirmacionPagoModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb1xfQ29uZmlybWFjaW9uUGFnb01vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pedidos/Confirmar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xDb25maXJtYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Pedidos/Historial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xIaXN0b3JpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Detalles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFsbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/CambiarContrasena.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDYW1iaWFyQ29udHJhc2VuYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/EditarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0YXJVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/ListarUsuarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMaXN0YXJVc3Vhcmlvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/Perfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xQZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Usuario/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/UNED/03101 - PROGRAMACION AVANZADA EN WEB/S12/AmazonUNED/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8cje81g5ld

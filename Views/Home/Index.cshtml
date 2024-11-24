@@ -1,0 +1,65 @@
+﻿@model HomeViewModel
+
+@{
+    ViewBag.Title = "Inicio - Categorías y Promociones";
+}
+
+<h1>Página Principal</h1>
+
+<section>
+    <h2>Categorías</h2>
+    <ul>
+        @foreach (var categoria in Model.Categorias)
+        {
+            <li>@categoria</li>
+        }
+    </ul>
+</section>
+
+<section>
+    <h2>Productos de Tecnología</h2>
+    @if (Model.ProductosTecnologia != null && Model.ProductosTecnologia.Any())
+    {
+        <ul>
+            @foreach (var producto in Model.ProductosTecnologia)
+            {
+                <li>
+                    <h3>@producto.Nombre</h3>
+                    <p>@producto.Descripcion</p>
+                    <p><strong>Precio:</strong> ₡@producto.Precio</p>
+                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">
+                        Ver detalles
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No hay productos en la categoría de Tecnología actualmente.</p>
+    }
+</section>
+
+<section>
+    <h2>Promociones Destacadas</h2>
+    @if (Model.PromocionesDestacadas != null && Model.PromocionesDestacadas.Any())
+    {
+        <ul>
+            @foreach (var promocion in Model.PromocionesDestacadas)
+            {
+                <li>
+                    <h3>@promocion.Nombre</h3>
+                    <p>@promocion.Descripcion</p>
+                    <p><strong>Precio:</strong> ₡@promocion.Precio</p>
+                    <a href="@Url.Action("Detalles", "Productos", new { id = promocion.Id })">
+                        Ver detalles
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No hay promociones destacadas actualmente.</p>
+    }
+</section>
