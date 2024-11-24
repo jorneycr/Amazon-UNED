@@ -69,7 +69,7 @@ public class ProductosController : Controller
         {
             _context.Productos.Add(producto);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarProductos");
         }
         return View(producto);
     }
@@ -97,7 +97,7 @@ public class ProductosController : Controller
         {
             _context.Update(producto);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListarProductos");
         }
         return View(producto);
     }
@@ -112,7 +112,7 @@ public class ProductosController : Controller
 
         _context.Productos.Remove(producto);
         _context.SaveChanges();
-        return RedirectToAction("Index");
+        return RedirectToAction("ListarProductos");
     }
 
 
