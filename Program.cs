@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuración de HTTPS
 builder.Services.AddHttpsRedirection(options =>
 {
     options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
@@ -17,6 +18,14 @@ builder.Services.AddDbContext<AmazonContext>(options =>
 builder.Services.AddIdentity<Usuario, IdentityRole>()
     .AddEntityFrameworkStores<AmazonContext>()
     .AddDefaultTokenProviders();
+
+// Configura soporte para sesiones
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Duración de la sesión (30 minutos)
+    options.Cookie.HttpOnly = true; // Aumenta la seguridad al evitar acceso desde JavaScript
+    options.Cookie.IsEssential = true; // Necesario para cumplir con la GDPR o similares
+});
 
 // Configura servicios adicionales
 builder.Services.AddControllersWithViews();
@@ -36,7 +45,7 @@ using (var scope = app.Services.CreateScope())
     await AmazonContext.SeedProductosAsync(context);
 }
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -47,6 +56,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Habilitar el uso de sesiones
+app.UseSession();
 
 app.UseAuthentication(); // Asegúrate de agregar autenticación antes de la autorización
 app.UseAuthorization();

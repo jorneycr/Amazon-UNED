@@ -4,17 +4,27 @@ using System.Linq;
 public class CarritoController : Controller
 {
     private readonly AmazonContext _context;
-    private readonly List<DetallePedido> _carrito;
 
     public CarritoController(AmazonContext context)
     {
         _context = context;
-        _carrito = new List<DetallePedido>();
+    }
+
+    private List<DetallePedido> ObtenerCarrito()
+    {
+        var carrito = HttpContext.Session.GetObject<List<DetallePedido>>("Carrito");
+        return carrito ?? new List<DetallePedido>();
+    }
+
+    private void GuardarCarrito(List<DetallePedido> carrito)
+    {
+        HttpContext.Session.SetObject("Carrito", carrito);
     }
 
     public IActionResult Index()
     {
-        return View(_carrito);
+        var carrito = ObtenerCarrito();
+        return View(carrito);
     }
 
     public IActionResult Agregar(int productoId, int cantidad)
@@ -26,47 +36,52 @@ public class CarritoController : Controller
             return RedirectToAction("Index", "Productos");
         }
 
-        var detalle = _carrito.FirstOrDefault(d => d.ProductoId == productoId);
+        var carrito = ObtenerCarrito();
+        var detalle = carrito.FirstOrDefault(d => d.ProductoId == productoId);
         if (detalle != null)
         {
             detalle.Cantidad += cantidad;
-            detalle.Precio = detalle.Cantidad * producto.Precio;
         }
         else
         {
-            _carrito.Add(new DetallePedido
+            carrito.Add(new DetallePedido
             {
                 ProductoId = producto.Id,
                 Producto = producto,
                 Cantidad = cantidad,
-                Precio = cantidad * producto.Precio
+                Precio = producto.Precio
             });
         }
 
+        GuardarCarrito(carrito);
         TempData["Mensaje"] = "Producto agregado al carrito.";
         return RedirectToAction("Index", "Productos");
     }
 
     public IActionResult Eliminar(int productoId)
     {
-        var detalle = _carrito.FirstOrDefault(d => d.ProductoId == productoId);
+        var carrito = ObtenerCarrito();
+        var detalle = carrito.FirstOrDefault(d => d.ProductoId == productoId);
         if (detalle != null)
         {
-            _carrito.Remove(detalle);
+            carrito.Remove(detalle);
         }
 
+        GuardarCarrito(carrito);
         return RedirectToAction("Index");
     }
 
+
     public IActionResult Actualizar(int productoId, int nuevaCantidad)
     {
-        var detalle = _carrito.FirstOrDefault(d => d.ProductoId == productoId);
+        var carrito = ObtenerCarrito();
+        var detalle = carrito.FirstOrDefault(d => d.ProductoId == productoId);
         if (detalle != null)
         {
             detalle.Cantidad = nuevaCantidad;
-            detalle.Precio = nuevaCantidad * detalle.Producto.Precio;
         }
 
+        GuardarCarrito(carrito);
         return RedirectToAction("Index");
     }
 }

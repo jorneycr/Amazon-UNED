@@ -31,11 +31,13 @@
                         <td>@item.Producto.Nombre</td>
                         <td>@item.Cantidad</td>
                         <td>@item.Precio.ToString("C")</td>
-                        <td>@(item.Cantidad * item.Precio).ToString("C")</td>
+                        <td>@(item.Cantidad * item.Precio)</td>
                         <td>
-                            <form action="@Url.Action("Eliminar", "Carrito", new { id = item.Id })" method="post">
+                            <form action="@Url.Action("Eliminar", "Carrito", new { productoId = item.ProductoId })"
+                                method="post">
                                 <button type="submit">Eliminar</button>
                             </form>
+
                         </td>
                     </tr>
                 }
