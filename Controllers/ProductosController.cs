@@ -58,7 +58,8 @@ public class ProductosController : Controller
 
     public IActionResult Crear()
     {
-        return View();
+        var producto = new Producto(); 
+        return View(producto);
     }
 
     [HttpPost]

@@ -10,6 +10,7 @@
     @if (!Model.Any())
     {
         <p>Tu carrito está vacío.</p>
+        <a href="@Url.Action("Index", "Productos")" class="btn-agregar-productos">Agregar productos</a>
     }
     else
     {
@@ -44,3 +45,20 @@
         <a href="@Url.Action("Confirmar", "Pedidos")">Proceder al Pago</a>
     }
 </section>
+
+<style>
+    .btn-agregar-productos {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .btn-agregar-productos:hover {
+        background-color: #0056b3;
+    }
+</style>
