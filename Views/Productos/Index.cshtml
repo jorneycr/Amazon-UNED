@@ -1,4 +1,4 @@
-@model IEnumerable<Producto>
+@model ProductosViewModel
 
 @{
     ViewBag.Title = "Lista de Productos";
@@ -7,22 +7,38 @@
 <h1>Productos</h1>
 
 <section>
-    @if (!Model.Any())
+    <!-- Filtros -->
+    <form method="get" action="@Url.Action("Index", "Productos")">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" onchange="this.form.submit()">
+            <option value="">Todas</option>
+            @foreach (var categoria in Model.Categorias)
+            {
+                <option value="@categoria">@categoria</option>
+            }
+        </select>
+
+        <label for="nombre">Buscar:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Buscar por nombre..." 
+               value="@ViewContext.HttpContext.Request.Query["nombre"]" />
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Resultados -->
+    @if (!Model.Productos.Any())
     {
-        <p>No hay productos disponibles en esta categoría.</p>
+        <p>No hay productos disponibles en esta categoría o búsqueda.</p>
     }
     else
     {
         <ul>
-            @foreach (var producto in Model)
+            @foreach (var producto in Model.Productos)
             {
                 <li>
                     <h3>@producto.Nombre</h3>
                     <p>@producto.Descripcion</p>
                     <p><strong>Precio:</strong> @producto.Precio.ToString("C")</p>
-                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">
-                        Ver detalles
-                    </a>
+                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">Ver detalles</a>
                 </li>
             }
         </ul>

@@ -9,25 +9,45 @@ public class ProductosController : Controller
         _context = context;
     }
 
-    public ActionResult Home()
+    public ActionResult Index(string categoria, string nombre)
     {
-        // Filtrar productos por la categoría "Tecnología"
-        // var productosTecnologia = _context.Productos
-        //     .Where(p => p.Categoria == "Tecnología")
-        //     .ToList() ?? new List<Producto>(); // Asegurarte de que no sea null
+        var categorias = _context.Productos
+            .Select(p => p.Categoria)
+            .Distinct()
+            .ToList();
 
-        return View();
+        var productos = _context.Productos.AsQueryable();
+
+        if (!string.IsNullOrEmpty(categoria))
+        {
+            productos = productos.Where(p => p.Categoria == categoria);
+        }
+
+        if (!string.IsNullOrEmpty(nombre))
+        {
+            nombre = nombre.ToLower(); // Convertimos el texto ingresado a minúsculas
+            productos = productos.Where(p => p.Nombre.ToLower().Contains(nombre));
+        }
+
+        var model = new ProductosViewModel
+        {
+            Categorias = categorias,
+            Productos = productos.ToList()
+        };
+
+        return View(model);
     }
 
     public ActionResult Detalles(int id)
     {
-        var producto = _context.Productos.Find(id);
-        if (producto == null) return HttpNotFound();
+        var producto = _context.Productos.FirstOrDefault(p => p.Id == id);
+
+        if (producto == null)
+        {
+            return NotFound(); // Manejar el caso en el que el producto no exista
+        }
+
         return View(producto);
     }
 
-    private ActionResult HttpNotFound()
-    {
-        throw new NotImplementedException();
-    }
 }
