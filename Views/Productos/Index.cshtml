@@ -14,7 +14,10 @@
             <option value="">Todas</option>
             @foreach (var categoria in Model.Categorias)
             {
-                <option value="@categoria">@categoria</option>
+                var selected = categoria == ViewContext.HttpContext.Request.Query["categoria"] ? "selected" : "";
+                <option value="@categoria" selected="@selected">
+                    @categoria
+                </option>
             }
         </select>
 
