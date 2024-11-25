@@ -1,0 +1,10 @@
+@model string
+
+@{
+    ViewBag.Title = "Error en el Pedido";
+}
+
+<h1>Error en el Pedido</h1>
+<p>@Model</p>
+
+<a href="@Url.Action("Confirmar", "Pedidos")">Volver al pago</a>

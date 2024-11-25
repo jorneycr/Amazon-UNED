@@ -1,0 +1,135 @@
+<!-- Modal de Confirmación de Pago -->
+<div class="modal fade" id="confirmacionPagoModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionPagoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmacionPagoLabel">Confirmación de Pago</h5>
+                <a href="/Usuario/Historial">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </a>                
+            </div>
+            <div class="modal-body">
+                <p>¡Gracias por su pago! Aquí está su recibo:</p>
+                <p><strong>Recibo:</strong> @ViewBag.Recibo</p>
+                <p><strong>Fecha de Pago:</strong> @ViewBag.FechaPago</p>
+                <p><strong>Estado:</strong> @ViewBag.Estado</p>
+                <p><strong>Usuario:</strong> @ViewBag.UsuarioNombre</p>
+                <p><strong>Email:</strong> @ViewBag.UsuarioEmail</p>
+                <p><strong>Productos:</strong> @ViewBag.Productos</p>
+                <button id="imprimirRecibo" class="btn btn-primary" onclick="window.print();">
+                    <i class="fa fa-print"></i> Imprimir Recibo
+                </button>
+            </div>
+            <div class="modal-footer">
+                <a href="/Usuario/Historial" class="btn btn-secondary">Volver al Historial de Reservas</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#confirmacionPagoModal').modal('show');
+    });
+</script>
+<style>
+    /* Estilo general del modal */
+#confirmacionPagoModal .modal-dialog {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+#confirmacionPagoModal .modal-content {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Encabezado del modal */
+#confirmacionPagoModal .modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#confirmacionPagoModal .modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#confirmacionPagoModal .close {
+    color: #483030;
+    font-size: 24px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#confirmacionPagoModal .close:hover {
+    opacity: 1;
+}
+
+/* Cuerpo del modal */
+#confirmacionPagoModal .modal-body {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+#confirmacionPagoModal .modal-body p {
+    margin-bottom: 10px;
+}
+
+#confirmacionPagoModal .modal-body strong {
+    color: #007bff;
+}
+
+#imprimirRecibo {
+    margin-top: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#imprimirRecibo:hover {
+    background-color: #218838;
+}
+
+/* Pie del modal */
+#confirmacionPagoModal .modal-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f8f9fa;
+}
+
+#confirmacionPagoModal .btn-secondary {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#confirmacionPagoModal .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+</style>

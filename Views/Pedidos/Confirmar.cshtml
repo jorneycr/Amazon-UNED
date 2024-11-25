@@ -24,7 +24,7 @@
                     <td>@item.Producto.Nombre</td>
                     <td>@item.Cantidad</td>
                     <td>@item.Precio.ToString("C")</td>
-                    <td>@(item.Cantidad * item.Precio).ToString("C")</td>
+                    <td>@(item.Cantidad * item.Precio)</td>
                 </tr>
             }
         </tbody>
@@ -36,20 +36,16 @@
     <h2>Detalles de Pago</h2>
     <form method="post" action="@Url.Action("ProcesarPago", "Pedidos")">
         <div>
-            <label for="cardNumber">Número de Tarjeta:</label>
-            <input type="text" id="cardNumber" name="CardNumber" required pattern="\d{16}" placeholder="1234 5678 9012 3456">
+            <label for="numeroTarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numeroTarjeta" name="numeroTarjeta" required pattern="\d{16}" placeholder="1234 5678 9012 3456">
         </div>
         <div>
-            <label for="cardHolder">Titular de la Tarjeta:</label>
-            <input type="text" id="cardHolder" name="CardHolder" required placeholder="Nombre completo">
-        </div>
-        <div>
-            <label for="expiryDate">Fecha de Expiración:</label>
-            <input type="text" id="expiryDate" name="ExpiryDate" required pattern="\d{2}/\d{2}" placeholder="MM/YY">
+            <label for="fechaExpiracion">Fecha de Expiración:</label>
+            <input type="text" id="fechaExpiracion" name="fechaExpiracion" required pattern="\d{2}/\d{2}" placeholder="MM/YY">
         </div>
         <div>
             <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="CVV" required pattern="\d{3}" placeholder="123">
+            <input type="text" id="cvv" name="cvv" required pattern="\d{3}" placeholder="123">
         </div>
         <button type="submit">Pagar</button>
     </form>

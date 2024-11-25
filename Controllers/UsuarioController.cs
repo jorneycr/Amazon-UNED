@@ -138,6 +138,18 @@ public async Task<IActionResult> Registro(RegistroViewModel model)
         return View(model);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> Historial()
+    {
+        var userId = _userManager.GetUserId(User); // Obtén el ID del usuario autenticado
+        var pedidos = await _context.Pedidos
+            .Where(r => r.Usuario.Id == userId)
+            .Include(r => r.Detalles)
+            .ToListAsync();
+
+        return View(pedidos);
+    }
+
     // Métodos exclusivos para Admin
 
     [Authorize(Roles = "Admin")]

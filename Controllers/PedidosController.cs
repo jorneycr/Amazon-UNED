@@ -2,15 +2,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 [Authorize]
 public class PedidosController : Controller
 {
     private readonly AmazonContext _context;
+    private readonly UserManager<Usuario> _userManager;
 
-    public PedidosController(AmazonContext context)
+
+    public PedidosController(AmazonContext context, UserManager<Usuario> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
 
     public IActionResult Historial()
@@ -54,7 +58,7 @@ public class PedidosController : Controller
         // Simulación de validación de pago
         if (!ValidarPago(numeroTarjeta, fechaExpiracion, cvv))
         {
-            TempData["Error"] = "Los datos de la tarjeta son inválidos.";
+            TempData["Error"] = $"Los datos de la tarjeta son inválidos {numeroTarjeta} {fechaExpiracion} {cvv}";
             return RedirectToAction("Error");
         }
 
@@ -62,10 +66,17 @@ public class PedidosController : Controller
         {
             try
             {
+                var userId = _userManager.GetUserId(User);
+                var usuario = _context.Usuarios.Find(userId);
+                if (userId == null || usuario == null)
+                {
+                    TempData["Error"] = "Debe iniciar sesión para hacer una reserva.";
+                    return RedirectToAction("Login", "Usuario");
+                }
                 // Generar el pedido
                 var pedido = new Pedido
                 {
-                    UsuarioId = User.Identity.Name,
+                    UsuarioId = userId,
                     Detalles = new List<DetallePedido>(),
                     PrecioTotal = carrito.Sum(d => d.Cantidad * d.Precio),
                     Estado = "Pagado",
@@ -108,12 +119,28 @@ public class PedidosController : Controller
                 HttpContext.Session.Remove("Carrito");
 
                 // Enviar datos al éxito
-                TempData["Recibo"] = Guid.NewGuid().ToString();
-                TempData["FechaPago"] = DateTime.Now.ToString("g");
-                TempData["UsuarioNombre"] = User.Identity.Name;
-                TempData["Productos"] = string.Join(", ", carrito.Select(d => d.Producto.Nombre));
+                // TempData["Recibo"] = Guid.NewGuid().ToString();
+                // TempData["FechaPago"] = DateTime.Now.ToString("g");
+                // TempData["UsuarioNombre"] = User.Identity.Name;
+                // TempData["Productos"] = string.Join(", ", carrito.Select(d => d.Producto.Nombre));
 
-                return RedirectToAction("Exito");
+                // return RedirectToAction("Exito");
+                 // Pasar información detallada a la vista
+            ViewBag.Recibo = Guid.NewGuid().ToString();
+            ViewBag.FechaPago = DateTime.Now.ToString("dd/MM/yyyy");
+            ViewBag.EstadoPago = "Pagado";
+            ViewBag.UsuarioNombre = usuario.Nombre;
+            ViewBag.UsuarioEmail = usuario.Email;
+            ViewBag.Productos = string.Join(", ", carrito.Select(d => d.Producto.Nombre)); // O cualquier otro detalle relevante de la ruta
+
+            return PartialView("_ConfirmacionPagoModal");
+            }
+            catch (DbUpdateException ex)
+            {
+                var innerException = ex.InnerException?.Message ?? ex.Message;
+                TempData["Error"] = $"Ocurrió un error al procesar el pago: {innerException}";
+                transaction.Rollback();
+                return RedirectToAction("Error");
             }
             catch (Exception ex)
             {
@@ -137,7 +164,7 @@ public class PedidosController : Controller
         }
 
         // Validar longitud y prefijo de la tarjeta (por ejemplo, tarjetas Visa inician con 4)
-        if (!numeroTarjeta.StartsWith("4") || numeroTarjeta.Length != 16)
+        if (numeroTarjeta.Length != 16)
         {
             return false;
         }
@@ -186,17 +213,10 @@ public class PedidosController : Controller
         return carrito.Sum(item => item.Cantidad * item.Precio);
     }
 
-
-    [HttpPost]
-    public IActionResult ProcesarPago(PagoViewModel modelo)
+    public IActionResult Error()
     {
-        if (ModelState.IsValid)
-        {
-            // Implementar lógica para procesar el pago
-            return RedirectToAction("Exito"); // Redirigir a una página de éxito
-        }
-        return View("Confirmar", modelo);
+        var mensajeError = TempData["Error"] as string ?? "Ocurrió un error inesperado.";
+        return View("Error", mensajeError);
     }
-
 
 }

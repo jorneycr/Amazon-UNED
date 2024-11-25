@@ -20,6 +20,7 @@
                     <h3>Pedido #@pedido.Id</h3>
                     <p>Fecha: @pedido.Fecha.ToString("g")</p>
                     <p>Estado: @pedido.Estado</p>
+                    <p>Estado: @pedido.Detalles</p>
                     <p>Total: @pedido.PrecioTotal.ToString("C")</p>
                     <a href="@Url.Action("Detalles", "Pedidos", new { id = pedido.Id })">Ver detalles</a>
                 </li>
