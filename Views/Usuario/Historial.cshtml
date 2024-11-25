@@ -22,7 +22,10 @@
                     <p>Estado: @pedido.Estado</p>
                     <p>Estado: @pedido.Detalles</p>
                     <p>Total: @pedido.PrecioTotal.ToString("C")</p>
-                    <a href="@Url.Action("Detalles", "Pedidos", new { id = pedido.Id })">Ver detalles</a>
+                    <form asp-action="CancelarPedido" asp-controller="Pedidos" asp-route-pedidoId="@pedido.Id" method="post"
+                        onsubmit="return confirm('¿Estás seguro de que deseas cancelar este pedido?');">
+                        <button type="submit" class="btn-cancelar" @(pedido.PuedeCancelar ? "" : "disabled")>Cancelar</button>
+                    </form>
                 </li>
             }
         </ul>

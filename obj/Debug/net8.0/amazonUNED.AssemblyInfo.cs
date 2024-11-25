@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("amazonUNED")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7881a120c760d96e0f130f4baaffb94651bfef9f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a4feb84c93d22969de35fc46fe066d51cc414fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("amazonUNED")]
 [assembly: System.Reflection.AssemblyTitleAttribute("amazonUNED")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

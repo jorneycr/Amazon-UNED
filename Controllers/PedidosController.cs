@@ -124,16 +124,13 @@ public class PedidosController : Controller
                 // TempData["UsuarioNombre"] = User.Identity.Name;
                 // TempData["Productos"] = string.Join(", ", carrito.Select(d => d.Producto.Nombre));
 
-                // return RedirectToAction("Exito");
-                 // Pasar información detallada a la vista
-            ViewBag.Recibo = Guid.NewGuid().ToString();
-            ViewBag.FechaPago = DateTime.Now.ToString("dd/MM/yyyy");
-            ViewBag.EstadoPago = "Pagado";
-            ViewBag.UsuarioNombre = usuario.Nombre;
-            ViewBag.UsuarioEmail = usuario.Email;
-            ViewBag.Productos = string.Join(", ", carrito.Select(d => d.Producto.Nombre)); // O cualquier otro detalle relevante de la ruta
+                ViewBag.Recibo = Guid.NewGuid().ToString();
+                ViewBag.FechaPago = DateTime.Now.ToString("dd/MM/yyyy");
+                ViewBag.EstadoPago = "Pagado";
+                ViewBag.UsuarioNombre = usuario.Nombre;
+                ViewBag.Productos = string.Join(", ", carrito.Select(d => d.Producto.Nombre)); // O cualquier otro detalle relevante de la ruta
 
-            return PartialView("_ConfirmacionPagoModal");
+                return PartialView("_ConfirmacionPagoModal");
             }
             catch (DbUpdateException ex)
             {
@@ -218,5 +215,41 @@ public class PedidosController : Controller
         var mensajeError = TempData["Error"] as string ?? "Ocurrió un error inesperado.";
         return View("Error", mensajeError);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CancelarPedido(int pedidoId)
+    {
+        var pedido = await _context.Pedidos
+            .Include(r => r.Detalles)
+            .FirstOrDefaultAsync(r => r.Id == pedidoId);
+
+        if (pedido != null)
+        {
+            // Verifica que se puedan cancelar
+            var fechaActual = DateTime.Now;
+            if ((fechaActual - pedido.Fecha).TotalDays < 2)
+            {
+                TempData["Error"] = "No se puede cancelar el pedido porque no han pasado al menos dos días desde su creación.";
+                return RedirectToAction("Historial", "Usuario");
+            }
+
+            // Elimina explícitamente los detalles asociados
+            _context.DetallePedidos.RemoveRange(pedido.Detalles);
+
+            // Elimina el pedido
+            _context.Pedidos.Remove(pedido);
+
+            await _context.SaveChangesAsync();
+            TempData["Success"] = "Pedido cancelado exitosamente.";
+        }
+        else
+        {
+            TempData["Error"] = "No se pudo encontrar el pedido.";
+        }
+
+        return RedirectToAction("Historial", "Usuario");
+    }
+
+
 
 }

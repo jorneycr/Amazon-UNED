@@ -7,4 +7,12 @@ public class Pedido
     public decimal PrecioTotal { get; set; }
     public string Estado { get; set; }
     public DateTime Fecha { get; set; }
+    public bool PuedeCancelar
+    {
+        get
+        {
+            var fechaActual = DateTime.Now;
+            return (fechaActual - this.Fecha).TotalDays <= 2;
+        }
+    }
 }
