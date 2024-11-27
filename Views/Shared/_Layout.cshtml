@@ -10,6 +10,47 @@
     <link rel="stylesheet" href="~/css/reservaDeViajes.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" />
 
+    <style>
+        /* Estilo personalizado para la marca 'Amazon' */
+        .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #FF9900; /* Color similar a Amazon */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.1);
+            color: #CC7A00;
+        }
+
+        /* Estilo para los enlaces del menú */
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Efecto hover en los enlaces */
+        .nav-link:hover {
+            color: #007bff;
+            transform: translateX(5px); /* Movimiento hacia la derecha */
+        }
+
+        /* Estilo para los elementos activos */
+        .nav-item.active .nav-link {
+            color: #007bff !important; /* Color para el enlace activo */
+            font-weight: bold;
+        }
+
+        /* Estilo para el menú de navegación */
+        .navbar-nav {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,6 +70,7 @@
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {                            
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Productos"
                                     asp-action="Index">Productos</a>
@@ -50,7 +92,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Usuario"
                                         asp-action="ListarUsuarios">Administrar Usuarios</a>
-                                </li>                                
+                                </li>                                  
                             }
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Usuario"

@@ -7,82 +7,122 @@
 <h1 class="product-details-title">@Model.Nombre</h1>
 
 <section class="product-details-section">
-    <p class="product-description"><strong>Descripción:</strong> @Model.Descripcion</p>
-    <p class="product-price"><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
-    <p class="product-category"><strong>Categoría:</strong> @Model.Categoria</p>
-    <p class="product-stock"><strong>Stock disponible:</strong> @Model.Stock</p>
+    <div class="product-info">
+        <p class="product-description"><strong>Descripción:</strong> @Model.Descripcion</p>
+        <p class="product-price"><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+        <p class="product-category"><strong>Categoría:</strong> @Model.Categoria</p>
+        <p class="product-stock"><strong>Stock disponible:</strong> @Model.Stock</p>
+    </div>
 
     <form class="add-to-cart-form" action="@Url.Action("Agregar", "Carrito", new { productoId = Model.Id })" method="post">
-        <label class="quantity-label" for="cantidad">Cantidad:</label>
-        <input class="quantity-input" type="number" id="cantidad" name="cantidad" min="1" max="@Model.Stock" value="1" required>
+        <div class="quantity-section">
+            <label class="quantity-label" for="cantidad">Cantidad:</label>
+            <input class="quantity-input" type="number" id="cantidad" name="cantidad" min="1" max="@Model.Stock" value="1" required>
+        </div>
         <button class="add-to-cart-button" type="submit">Agregar al Carrito</button>
     </form>
+
+    <div class="back-to-home">
+        <a href="@Url.Action("Index", "Home")" class="back-to-home-button">Volver al Inicio</a>
+    </div>
 </section>
 
 <style>
     .product-details-title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-}
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #111;
+    }
 
-.product-details-section {
-    margin: 2rem auto;
-    max-width: 600px;
-    padding: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
+    .product-details-section {
+        margin: 2rem auto;
+        max-width: 600px;
+        padding: 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
 
-.product-description,
-.product-price,
-.product-category,
-.product-stock {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
+    .product-info {
+        margin-bottom: 1.5rem;
+    }
 
-.product-price {
-    font-weight: bold;
-    color: #333;
-}
+    .product-description,
+    .product-price,
+    .product-category,
+    .product-stock {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
 
-.add-to-cart-form {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    .product-price {
+        font-weight: bold;
+        color: #333;
+    }
 
-.quantity-label {
-    font-size: 1rem;
-    font-weight: bold;
-}
+    .add-to-cart-form {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-.quantity-input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    max-width: 100px;
-}
+    .quantity-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
-.add-to-cart-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    .quantity-label {
+        font-size: 1rem;
+        font-weight: bold;
+    }
 
-.add-to-cart-button:hover {
-    background-color: #0056b3;
-}
+    .quantity-input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        max-width: 100px;
+    }
 
+    .add-to-cart-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+
+    .add-to-cart-button:hover {
+        background-color: #0056b3;
+    }
+
+    .back-to-home {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .back-to-home-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #28a745;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-to-home-button:hover {
+        background-color: #218838;
+    }
 </style>
