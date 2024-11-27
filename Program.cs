@@ -12,7 +12,7 @@ builder.Services.AddHttpsRedirection(options =>
 
 // Configura el DbContext para usar SQL Server
 builder.Services.AddDbContext<AmazonContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLocal")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configura Identity con roles
 builder.Services.AddIdentity<Usuario, IdentityRole>()
@@ -38,11 +38,11 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     // Seed roles "Usuario" y "Admin"
-    AmazonContext.SeedRolesAsync(services).Wait();
+    // AmazonContext.SeedRolesAsync(services).Wait();
 
     // Seed productos
-    var context = services.GetRequiredService<AmazonContext>();
-    await AmazonContext.SeedProductosAsync(context);
+    // var context = services.GetRequiredService<AmazonContext>();
+    // await AmazonContext.SeedProductosAsync(context);
 }
 
 // Configure the HTTP request pipeline
