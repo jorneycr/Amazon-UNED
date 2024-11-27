@@ -13,6 +13,7 @@
     }
     else
     {
+
         <ul class="orders-list">
             @foreach (var pedido in Model)
             {
@@ -20,10 +21,22 @@
                     <h3 class="order-id">Pedido #@pedido.Id</h3>
                     <p class="order-date">Fecha: @pedido.Fecha.ToString("g")</p>
                     <p class="order-status">Estado: @pedido.Estado</p>
-                    <p class="order-details">Detalles: @pedido.Detalles</p>
+
+                    <h4>Detalles:</h4>
+                    <ul class="details-list">
+                        @foreach (var detalle in pedido.Detalles)
+                        {
+                            <li class="detail-item">
+                                Producto: @detalle.Producto.Nombre <br />
+                                Cantidad: @detalle.Cantidad <br />
+                                Precio: @detalle.Precio.ToString("C")
+                            </li>
+                        }
+                    </ul>
+
                     <p class="order-total">Total: @pedido.PrecioTotal.ToString("C")</p>
                     <form asp-action="CancelarPedido" asp-controller="Pedidos" asp-route-pedidoId="@pedido.Id" method="post"
-                          onsubmit="return confirm('¿Estás seguro de que deseas cancelar este pedido?');">
+                        onsubmit="return confirm('¿Estás seguro de que deseas cancelar este pedido?');">
                         <button type="submit" class="btn-cancelar" @(pedido.PuedeCancelar ? "" : "disabled")>Cancelar</button>
                     </form>
                 </li>
@@ -34,79 +47,73 @@
 
 <style>
     /* Título */
-.history-title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-}
+    .history-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 
-/* Sección del historial de pedidos */
-.history-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 0 auto;
-}
+    /* Sección del historial de pedidos */
+    .history-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-/* Mensaje si no hay pedidos */
-.no-orders-message {
-    font-size: 1.2rem;
-    color: #555;
-    text-align: center;
-}
+    /* Mensaje si no hay pedidos */
+    .no-orders-message {
+        font-size: 1.2rem;
+        color: #555;
+        text-align: center;
+    }
 
-/* Lista de pedidos */
-.orders-list {
-    list-style: none;
-    padding: 0;
-}
+    /* Lista de pedidos */
+    .orders-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.order-item {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-}
+    .order-item {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 1rem 0;
+        padding: 1rem;
+        background-color: #f9f9f9;
+    }
 
-.order-id {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+    /* Detalles del pedido */
+    .details-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0 1rem 0;
+    }
 
-.order-date,
-.order-status,
-.order-details,
-.order-total {
-    font-size: 1rem;
-    color: #333;
-    margin: 0.5rem 0;
-}
+    .detail-item {
+        font-size: 0.9rem;
+        color: #555;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #ddd;
+    }
 
-/* Botón cancelar */
-.btn-cancelar {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #dc3545;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    /* Botón de cancelar */
+    .btn-cancelar {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
 
-.btn-cancelar:hover {
-    background-color: #c82333;
-}
-
-.btn-cancelar:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
+    .btn-cancelar:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+    }
 </style>

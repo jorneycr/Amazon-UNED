@@ -22,36 +22,36 @@ public class UsuarioController : Controller
     public IActionResult Registro() => View();
 
     [HttpPost]
-public async Task<IActionResult> Registro(RegistroViewModel model)
-{
-    if (ModelState.IsValid)
+    public async Task<IActionResult> Registro(RegistroViewModel model)
     {
-        var user = new Usuario
+        if (ModelState.IsValid)
         {
-            UserName = model.Email,
-            Email = model.Email,
-            Nombre = model.Nombre,
-            Apellido = model.Apellido
-        };
+            var user = new Usuario
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                Nombre = model.Nombre,
+                Apellido = model.Apellido
+            };
 
-        var result = await _userManager.CreateAsync(user, model.Password);
+            var result = await _userManager.CreateAsync(user, model.Password);
 
-        if (result.Succeeded)
-        {
-            // Se asigna el rol, pero no se inicia sesión automáticamente
-            await _userManager.AddToRoleAsync(user, "Usuario");
+            if (result.Succeeded)
+            {
+                // Se asigna el rol, pero no se inicia sesión automáticamente
+                await _userManager.AddToRoleAsync(user, "Usuario");
 
-            // Redirigir al inicio de sesión en lugar de al home
-            return RedirectToAction("Login", "Usuario");
+                // Redirigir al inicio de sesión en lugar de al home
+                return RedirectToAction("Login", "Usuario");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
         }
-
-        foreach (var error in result.Errors)
-        {
-            ModelState.AddModelError(string.Empty, error.Description);
-        }
+        return View(model);
     }
-    return View(model);
-}
 
 
     [HttpGet]
@@ -145,6 +145,7 @@ public async Task<IActionResult> Registro(RegistroViewModel model)
         var pedidos = await _context.Pedidos
             .Where(r => r.Usuario.Id == userId)
             .Include(r => r.Detalles)
+            .ThenInclude(d => d.Producto) // Incluye la relación Producto dentro de Detalles
             .ToListAsync();
 
         return View(pedidos);

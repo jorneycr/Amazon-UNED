@@ -126,7 +126,7 @@ public class PedidosController : Controller
 
                 ViewBag.Recibo = Guid.NewGuid().ToString();
                 ViewBag.FechaPago = DateTime.Now.ToString("dd/MM/yyyy");
-                ViewBag.EstadoPago = "Pagado";
+                ViewBag.Estado = "Pagado";
                 ViewBag.UsuarioNombre = usuario.Nombre;
                 ViewBag.Productos = string.Join(", ", carrito.Select(d => d.Producto.Nombre)); // O cualquier otro detalle relevante de la ruta
 
