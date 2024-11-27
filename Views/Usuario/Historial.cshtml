@@ -4,26 +4,26 @@
     ViewBag.Title = "Historial de Pedidos";
 }
 
-<h1>Historial de Pedidos</h1>
+<h1 class="history-title">Historial de Pedidos</h1>
 
-<section>
+<section class="history-section">
     @if (!Model.Any())
     {
-        <p>No tienes pedidos realizados.</p>
+        <p class="no-orders-message">No tienes pedidos realizados.</p>
     }
     else
     {
-        <ul>
+        <ul class="orders-list">
             @foreach (var pedido in Model)
             {
-                <li>
-                    <h3>Pedido #@pedido.Id</h3>
-                    <p>Fecha: @pedido.Fecha.ToString("g")</p>
-                    <p>Estado: @pedido.Estado</p>
-                    <p>Estado: @pedido.Detalles</p>
-                    <p>Total: @pedido.PrecioTotal.ToString("C")</p>
+                <li class="order-item">
+                    <h3 class="order-id">Pedido #@pedido.Id</h3>
+                    <p class="order-date">Fecha: @pedido.Fecha.ToString("g")</p>
+                    <p class="order-status">Estado: @pedido.Estado</p>
+                    <p class="order-details">Detalles: @pedido.Detalles</p>
+                    <p class="order-total">Total: @pedido.PrecioTotal.ToString("C")</p>
                     <form asp-action="CancelarPedido" asp-controller="Pedidos" asp-route-pedidoId="@pedido.Id" method="post"
-                        onsubmit="return confirm('¿Estás seguro de que deseas cancelar este pedido?');">
+                          onsubmit="return confirm('¿Estás seguro de que deseas cancelar este pedido?');">
                         <button type="submit" class="btn-cancelar" @(pedido.PuedeCancelar ? "" : "disabled")>Cancelar</button>
                     </form>
                 </li>
@@ -31,3 +31,82 @@
         </ul>
     }
 </section>
+
+<style>
+    /* Título */
+.history-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Sección del historial de pedidos */
+.history-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Mensaje si no hay pedidos */
+.no-orders-message {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Lista de pedidos */
+.orders-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.order-id {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.order-date,
+.order-status,
+.order-details,
+.order-total {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: #c82333;
+}
+
+.btn-cancelar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+</style>

@@ -4,30 +4,30 @@
     ViewBag.Title = "Inicio - Categorías y Promociones";
 }
 
-<h1>Página Principal</h1>
+<h1 class="home-title">Página Principal</h1>
 
-<section>
-    <h2>Categorías</h2>
-    <ul>
+<section class="categories-section">
+    <h2 class="categories-title">Categorías</h2>
+    <ul class="categories-list">
         @foreach (var categoria in Model.Categorias)
         {
-            <li>@categoria</li>
+            <li class="category-item">@categoria</li>
         }
     </ul>
 </section>
 
-<section>
-    <h2>Productos de Tecnología</h2>
+<section class="technology-products-section">
+    <h2 class="technology-products-title">Productos de Tecnología</h2>
     @if (Model.ProductosTecnologia != null && Model.ProductosTecnologia.Any())
     {
-        <ul>
+        <ul class="technology-products-list">
             @foreach (var producto in Model.ProductosTecnologia)
             {
-                <li>
-                    <h3>@producto.Nombre</h3>
-                    <p>@producto.Descripcion</p>
-                    <p><strong>Precio:</strong> ₡@producto.Precio</p>
-                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">
+                <li class="technology-product-item">
+                    <h3 class="technology-product-name">@producto.Nombre</h3>
+                    <p class="technology-product-description">@producto.Descripcion</p>
+                    <p class="technology-product-price"><strong>Precio:</strong> ₡@producto.Precio</p>
+                    <a class="technology-product-link" href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">
                         Ver detalles
                     </a>
                 </li>
@@ -36,22 +36,22 @@
     }
     else
     {
-        <p>No hay productos en la categoría de Tecnología actualmente.</p>
+        <p class="technology-products-empty">No hay productos en la categoría de Tecnología actualmente.</p>
     }
 </section>
 
-<section>
-    <h2>Promociones Destacadas</h2>
+<section class="promotions-section">
+    <h2 class="promotions-title">Promociones Destacadas</h2>
     @if (Model.PromocionesDestacadas != null && Model.PromocionesDestacadas.Any())
     {
-        <ul>
+        <ul class="promotions-list">
             @foreach (var promocion in Model.PromocionesDestacadas)
             {
-                <li>
-                    <h3>@promocion.Nombre</h3>
-                    <p>@promocion.Descripcion</p>
-                    <p><strong>Precio:</strong> ₡@promocion.Precio</p>
-                    <a href="@Url.Action("Detalles", "Productos", new { id = promocion.Id })">
+                <li class="promotion-item">
+                    <h3 class="promotion-name">@promocion.Nombre</h3>
+                    <p class="promotion-description">@promocion.Descripcion</p>
+                    <p class="promotion-price"><strong>Precio:</strong> ₡@promocion.Precio</p>
+                    <a class="promotion-link" href="@Url.Action("Detalles", "Productos", new { id = promocion.Id })">
                         Ver detalles
                     </a>
                 </li>
@@ -60,6 +60,100 @@
     }
     else
     {
-        <p>No hay promociones destacadas actualmente.</p>
+        <p class="promotions-empty">No hay promociones destacadas actualmente.</p>
     }
 </section>
+
+<style>
+    /*home index*/
+.home-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.categories-section {
+    margin: 2rem 0;
+}
+
+.categories-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-item {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.technology-products-section,
+.promotions-section {
+    margin: 2rem 0;
+}
+
+.technology-products-title,
+.promotions-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.technology-products-list,
+.promotions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.technology-product-item,
+.promotion-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+}
+
+.technology-product-name,
+.promotion-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.technology-product-description,
+.promotion-description {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.technology-product-price,
+.promotion-price {
+    font-weight: bold;
+    color: #333;
+}
+
+.technology-product-link,
+.promotion-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.technology-product-link:hover,
+.promotion-link:hover {
+    text-decoration: underline;
+}
+
+.technology-products-empty,
+.promotions-empty {
+    font-style: italic;
+    color: #888;
+}
+</style>

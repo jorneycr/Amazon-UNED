@@ -4,40 +4,133 @@
     ViewBag.Title = "Gestión de Productos";
 }
 
-<h1>Gestión de Productos</h1>
+<h1 class="product-management-title">Gestión de Productos</h1>
 
-<a href="@Url.Action("Crear", "Productos")">Agregar Nuevo Producto</a>
+<a class="add-product-link" href="@Url.Action("Crear", "Productos")">Agregar Nuevo Producto</a>
 
 @if (!Model.Any())
 {
-    <p>No hay productos disponibles.</p>
+    <p class="no-products-message">No hay productos disponibles.</p>
 }
 else
 {
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Acciones</th>
+    <table class="product-management-table">
+        <thead class="table-header">
+            <tr class="table-header-row">
+                <th class="table-header-cell">Nombre</th>
+                <th class="table-header-cell">Descripción</th>
+                <th class="table-header-cell">Precio</th>
+                <th class="table-header-cell">Stock</th>
+                <th class="table-header-cell">Acciones</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-body">
             @foreach (var producto in Model)
             {
-                <tr>
-                    <td>@producto.Nombre</td>
-                    <td>@producto.Descripcion</td>
-                    <td>@producto.Precio.ToString("C")</td>
-                    <td>@producto.Stock</td>
-                    <td>
-                        <a href="@Url.Action("Editar", "Productos", new { id = producto.Id })">Editar</a> |
-                        <a href="@Url.Action("Eliminar", "Productos", new { id = producto.Id })" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+                <tr class="table-body-row">
+                    <td class="table-body-cell">@producto.Nombre</td>
+                    <td class="table-body-cell">@producto.Descripcion</td>
+                    <td class="table-body-cell">@producto.Precio.ToString("C")</td>
+                    <td class="table-body-cell">@producto.Stock</td>
+                    <td class="table-body-cell actions-cell">
+                        <a class="edit-link" href="@Url.Action("Editar", "Productos", new { id = producto.Id })">Editar</a> |
+                        <a class="delete-link" href="@Url.Action("Eliminar", "Productos", new { id = producto.Id })" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 }
+
+<style>
+    .product-management-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.add-product-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-link:hover {
+    background-color: #218838;
+}
+
+.no-products-message {
+    font-size: 1rem;
+    font-style: italic;
+    color: #888;
+    text-align: center;
+}
+
+.product-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.table-header {
+    background-color: #f8f9fa;
+}
+
+.table-header-row {
+    text-align: left;
+}
+
+.table-header-cell {
+    padding: 0.75rem;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table-body-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-body-row:hover {
+    background-color: #e9ecef;
+}
+
+.table-body-cell {
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.actions-cell {
+    text-align: center;
+}
+
+.edit-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.edit-link:hover {
+    color: #0056b3;
+}
+
+.delete-link {
+    color: #dc3545;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.delete-link:hover {
+    color: #c82333;
+}
+
+</style>

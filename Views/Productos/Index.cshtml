@@ -4,13 +4,13 @@
     ViewBag.Title = "Lista de Productos";
 }
 
-<h1>Productos</h1>
+<h1 class="product-list-title">Productos</h1>
 
-<section>
+<section class="product-list-section">
     <!-- Filtros -->
-    <form method="get" action="@Url.Action("Index", "Productos")">
-        <label for="categoria">Categoría:</label>
-        <select id="categoria" name="categoria" onchange="this.form.submit()">
+    <form class="product-filter-form" method="get" action="@Url.Action("Index", "Productos")">
+        <label class="filter-label" for="categoria">Categoría:</label>
+        <select class="filter-select" id="categoria" name="categoria" onchange="this.form.submit()">
             <option value="">Todas</option>
             @foreach (var categoria in Model.Categorias)
             {
@@ -21,29 +21,144 @@
             }
         </select>
 
-        <label for="nombre">Buscar:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Buscar por nombre..." 
+        <label class="filter-label" for="nombre">Buscar:</label>
+        <input class="filter-input" type="text" id="nombre" name="nombre" placeholder="Buscar por nombre..." 
                value="@ViewContext.HttpContext.Request.Query["nombre"]" />
-        <button type="submit">Buscar</button>
+        <button class="filter-button" type="submit">Buscar</button>
     </form>
 
     <!-- Resultados -->
     @if (!Model.Productos.Any())
     {
-        <p>No hay productos disponibles en esta categoría o búsqueda.</p>
+        <p class="no-products-message">No hay productos disponibles en esta categoría o búsqueda.</p>
     }
     else
     {
-        <ul>
+        <ul class="product-list">
             @foreach (var producto in Model.Productos)
             {
-                <li>
-                    <h3>@producto.Nombre</h3>
-                    <p>@producto.Descripcion</p>
-                    <p><strong>Precio:</strong> @producto.Precio.ToString("C")</p>
-                    <a href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">Ver detalles</a>
+                <li class="product-item">
+                    <h3 class="product-name">@producto.Nombre</h3>
+                    <p class="product-description">@producto.Descripcion</p>
+                    <p class="product-price"><strong>Precio:</strong> @producto.Precio.ToString("C")</p>
+                    <a class="product-details-link" href="@Url.Action("Detalles", "Productos", new { id = producto.Id })">Ver detalles</a>
                 </li>
             }
         </ul>
     }
 </section>
+
+<style>
+    /* Título */
+.product-list-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Sección principal */
+.product-list-section {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Formulario de filtros */
+.product-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.filter-label {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.filter-select,
+.filter-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+/* Mensaje de productos no encontrados */
+.no-products-message {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #888;
+    text-align: center;
+}
+
+/* Lista de productos */
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-item {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-details-link {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-details-link:hover {
+    color: #0056b3;
+}
+
+</style>

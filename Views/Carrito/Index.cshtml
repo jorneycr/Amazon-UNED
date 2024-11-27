@@ -4,17 +4,17 @@
     ViewBag.Title = "Carrito de Compras";
 }
 
-<h1>Tu Carrito</h1>
+<h1 class="cart-title">Tu Carrito</h1>
 
-<section>
+<section class="cart-section">
     @if (!Model.Any())
     {
-        <p>Tu carrito está vacío.</p>
+        <p class="empty-cart-message">Tu carrito está vacío.</p>
         <a href="@Url.Action("Index", "Productos")" class="btn-agregar-productos">Agregar productos</a>
     }
     else
     {
-        <table>
+        <table class="cart-table">
             <thead>
                 <tr>
                     <th>Producto</th>
@@ -27,40 +27,136 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.Producto.Nombre</td>
-                        <td>@item.Cantidad</td>
-                        <td>@item.Precio.ToString("C")</td>
-                        <td>@(item.Cantidad * item.Precio)</td>
-                        <td>
-                            <form action="@Url.Action("Eliminar", "Carrito", new { productoId = item.ProductoId })"
-                                method="post">
-                                <button type="submit">Eliminar</button>
+                    <tr class="cart-item">
+                        <td class="cart-product-name">@item.Producto.Nombre</td>
+                        <td class="cart-quantity">@item.Cantidad</td>
+                        <td class="cart-price">@item.Precio.ToString("C")</td>
+                        <td class="cart-subtotal">@(@item.Cantidad * item.Precio)</td>
+                        <td class="cart-actions">
+                            <form action="@Url.Action("Eliminar", "Carrito", new { productoId = item.ProductoId })" method="post">
+                                <button type="submit" class="btn-eliminar">Eliminar</button>
                             </form>
-
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-        <h2>Total: @Model.Sum(i => i.Cantidad * i.Precio).ToString("C")</h2>
-        <a href="@Url.Action("Confirmar", "Pedidos")">Proceder al Pago</a>
+        <h2 class="cart-total">Total: @Model.Sum(i => i.Cantidad * i.Precio).ToString("C")</h2>
+        <a href="@Url.Action("Confirmar", "Pedidos")" class="btn-proceder-pago">Proceder al Pago</a>
     }
 </section>
 
 <style>
-    .btn-agregar-productos {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-    }
+    /* Título del carrito */
+.cart-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-    .btn-agregar-productos:hover {
-        background-color: #0056b3;
-    }
+/* Sección del carrito */
+.cart-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Mensaje si el carrito está vacío */
+.empty-cart-message {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Tabla de carrito */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.cart-table th, .cart-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f1f1f1;
+}
+
+.cart-item {
+    background-color: #fff;
+}
+
+.cart-product-name,
+.cart-quantity,
+.cart-price,
+.cart-subtotal {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Total del carrito */
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botón para agregar productos */
+.btn-agregar-productos {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-agregar-productos:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Botón para proceder al pago */
+.btn-proceder-pago {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-proceder-pago:hover {
+    background-color: #218838;
+}
+
 </style>
