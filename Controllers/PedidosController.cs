@@ -220,35 +220,40 @@ public class PedidosController : Controller
     public async Task<IActionResult> CancelarPedido(int pedidoId)
     {
         var pedido = await _context.Pedidos
-            .Include(r => r.Detalles)
-            .FirstOrDefaultAsync(r => r.Id == pedidoId);
+            .Include(p => p.Detalles)
+            .FirstOrDefaultAsync(p => p.Id == pedidoId);
 
-        if (pedido != null)
+        if (pedido == null)
         {
-            // Verifica que se puedan cancelar
-            var fechaActual = DateTime.Now;
-            if ((fechaActual - pedido.Fecha).TotalDays < 2)
-            {
-                TempData["Error"] = "No se puede cancelar el pedido porque no han pasado al menos dos días desde su creación.";
-                return RedirectToAction("Historial", "Usuario");
-            }
+            TempData["Error"] = "No se pudo encontrar el pedido.";
+            return RedirectToAction("Historial", "Usuario");
+        }
 
-            // Elimina explícitamente los detalles asociados
+        var fechaActual = DateTime.Now;
+        if ((fechaActual - pedido.Fecha).TotalDays > 2)
+        {
+            TempData["Error"] = "No se puede cancelar el pedido porque han pasado más de dos días desde su creación.";
+            return RedirectToAction("Historial", "Usuario");
+        }
+
+        try
+        {
             _context.DetallePedidos.RemoveRange(pedido.Detalles);
 
-            // Elimina el pedido
             _context.Pedidos.Remove(pedido);
 
             await _context.SaveChangesAsync();
+
             TempData["Success"] = "Pedido cancelado exitosamente.";
         }
-        else
+        catch (Exception ex)
         {
-            TempData["Error"] = "No se pudo encontrar el pedido.";
+            TempData["Error"] = $"Error al intentar cancelar el pedido: {ex.Message}";
         }
 
         return RedirectToAction("Historial", "Usuario");
     }
+
 
 
 

@@ -24,6 +24,12 @@ public class AmazonContext : IdentityDbContext<Usuario>
             .WithOne(p => p.Usuario)
             .HasForeignKey(p => p.UsuarioId);
 
+        modelBuilder.Entity<Pedido>()
+        .HasMany(p => p.Detalles)
+        .WithOne(d => d.Pedido)
+        .HasForeignKey(d => d.PedidoId)
+        .OnDelete(DeleteBehavior.Cascade);
+
         // Relación Pedido -> DetallePedido (1 a muchos)
         modelBuilder.Entity<DetallePedido>()
             .HasOne(dp => dp.Pedido)
