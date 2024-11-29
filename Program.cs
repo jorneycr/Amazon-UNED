@@ -12,7 +12,7 @@ builder.Services.AddHttpsRedirection(options =>
 
 // Configura el DbContext para usar SQL Server
 builder.Services.AddDbContext<AmazonContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLocal")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configura Identity con roles
 builder.Services.AddIdentity<Usuario, IdentityRole>()
