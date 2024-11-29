@@ -153,4 +153,3 @@ R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\obj\Debug\net8.0\ama
 R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\obj\Debug\net8.0\ref\amazonUNED.dll
 R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\obj\Debug\net8.0\amazonUNED.sourcelink.json
 R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\bin\Debug\net8.0\Newtonsoft.Json.dll
-R:\UNED\03101 - PROGRAMACION AVANZADA EN WEB\S12\AmazonUNED\bin\Debug\net8.0\appsettings.Production.json
